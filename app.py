@@ -25,26 +25,18 @@ def sending():
         driver = webdriver.Chrome(service=Service(ChromeDriverManager(log_level=0).install()), options=options)
 
         # 기본군사훈련단
-        # url = 'https://www.airforce.mil.kr/user/indexSub.action?codyMenuSeq=156893223&siteId=last2&menuUIType=sub'
-        # 정보통신학교
-        url = 'http://airforce.mil.kr:8081/user/indexSub.action?codyMenuSeq=156894686&siteId=tong-new&menuUIType=sub'
+        url = 'https://www.airforce.mil.kr/user/indexSub.action?codyMenuSeq=156893223&siteId=last2&menuUIType=sub'
+
         driver.get(url)
         driver.maximize_window()
         action = ActionChains(driver)
         driver.implicitly_wait(10)  
 
         # Input Soldier Information
-        #driver.find_element_by_css_selector('#searchName').send_keys('노권후') 
-        #driver.find_element_by_css_selector('#birthYear').send_keys('2001')
-        #driver.find_element_by_css_selector('#birthMonth').send_keys('01')
-        #driver.find_element_by_css_selector('#birthDay').send_keys('12')
-        #driver.find_element_by_css_selector('#btnNext').click()
-
-        # TEST ON Hokyu
-        driver.find_element_by_css_selector('#searchName').send_keys('김호규') 
-        driver.find_element_by_css_selector('#birthYear').send_keys('2000')
-        driver.find_element_by_css_selector('#birthMonth').send_keys('04')
-        driver.find_element_by_css_selector('#birthDay').send_keys('27')
+        driver.find_element_by_css_selector('#searchName').send_keys('노권후') 
+        driver.find_element_by_css_selector('#birthYear').send_keys('2001')
+        driver.find_element_by_css_selector('#birthMonth').send_keys('01')
+        driver.find_element_by_css_selector('#birthDay').send_keys('12')
         driver.find_element_by_css_selector('#btnNext').click()
 
         # Click Search Soldier Button
@@ -64,7 +56,7 @@ def sending():
         driver.find_element_by_css_selector('.popSearchInput').send_keys("사천대로 1949")
         driver.find_element_by_xpath("/html/body/form[2]/div/div/div[1]/div[1]/fieldset/span/input[2]").click()
         driver.find_element_by_xpath("/html/body/form[2]/div/div/div[1]/div[2]/table/tbody/tr[1]/td[2]/a/div/div").click()
-        driver.find_element_by_css_selector('#rtAddrDetail').send_keys("사서함 336-9 부품정비대대 운영통제실")
+        driver.find_element_by_css_selector('#rtAddrDetail').send_keys("토성2생활관 사이버지식정보방")
         driver.find_element_by_css_selector('.btn-bl').click()
 
         # Input Letter Contents
