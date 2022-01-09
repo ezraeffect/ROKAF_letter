@@ -19,7 +19,7 @@
 		<!-- Header -->
 			<header id="header">
 				<div class="inner">
-					<a href="#" class="image avatar"><img src="images/avatar.jpg" alt="" /></a>
+					<a href="#" class="image avatar"><img src="{{ url_for('static', filename='images/avatar.jpg')}}" alt="" /></a>
 					<h1>대한민국을 지키는 가장 높은 힘, <br />
 						공군에서의 첫 시작을 하고있는 권후에게<br />
 						따뜻한 응원의 편지를 써주세요!</h1>
@@ -34,7 +34,7 @@
 						<p>입영 3주차 월요일부터 수료 주 수요일 17시까지 작성 가능하고, 하루에 100건만 작성 가능합니다. 특수문자는 인쇄 시 표시가 안될수도 있고 본문 전체를 망치기도 합니다. 손편지는 아래의 주소를 참고 해주시면 됩니다. 불쾌한 내용의 편지는 오히려 받는 사람에게 독이 되니 신중하게 작성 부탁드립니다.</p>
 						<div class="row">
 							<div class="col-8 col-12-small">
-								<form method="post" action="#">
+                                <form class='mail-container' action = "/" method = "POST">
 									<div class="row gtr-uniform gtr-50">
 										<div class="col-6 col-12-xsmall"><input type="text" name="name" id="name" placeholder="이름" /></div>
 										<div class="col-6 col-12-xsmall"><input type="text" name="rel" id="relation" placeholder="관계" /></div>
@@ -42,10 +42,10 @@
 										<div class="col-12"><textarea name="content" id="content" placeholder="내용" rows="4" maxlength="1200"></textarea></div>
 										<div class="col-12"><input type="password" name="password" id="password" placeholder="비밀번호"/></div>
 									</div>
-								</form>
-								<ul class="actions">
-									<li><input type="submit" value="편지 작성하기" /></li>
-								</ul>
+								    <ul class="actions">
+									    <li><input type="submit" value="편지 작성하기" /></li>
+								    </ul>
+                                </form>
 							</div>
 							<div class="col-4 col-12-small">
 								<ul class="labeled-icons">
@@ -82,12 +82,12 @@
 			</footer>
 
 		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.poptrox.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+			<script src="{{ url_for('static', filename='assets/js/jquery.min.js')}}"></script>
+			<script src="{{ url_for('static', filename='assets/js/jquery.poptrox.min.js')}}"></script>
+			<script src="{{ url_for('static', filename='assets/js/browser.min.js')}}"></script>
+			<script src="{{ url_for('static', filename='assets/js/breakpoints.min.js')}}"></script>
+			<script src="{{ url_for('static', filename='assets/js/util.js')}}"></script>
+			<script src="{{ url_for('static', filename='assets/js/main.js')}}"></script>
 
 	</body>
 </html>
